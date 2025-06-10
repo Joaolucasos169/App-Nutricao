@@ -1,0 +1,44 @@
+# Backend
+backend/node_modules
+backend/.env
+backend/.vscode
+backend/.DS_Store
+backend/npm-debug.log*
+backend/yarn-debug.log*
+backend/yarn-error.log*
+backend/coverage
+
+# Mobile
+mobile/node_modules
+mobile/.expo
+mobile/.expo-shared
+mobile/.DS_Store
+mobile/npm-debug.log*
+mobile/yarn-debug.log*
+mobile/yarn-error.log*
+mobile/.env
+mobile/android/build
+mobile/android/.gradle
+mobile/android/app/build
+mobile/android/local.properties
+mobile/ios/Pods
+mobile/ios/build
+mobile/ios/*.xcworkspace
+mobile/ios/.xcode.env.local
+
+# Docker
+*.env
+docker-compose.yml
+docker-compose.*.yml
+.dockerignore
+
+# Geral
+.DS_Store
+*.log
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
