@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Image } from 'react-native';
 import { useRouter } from 'expo-router';
-import { colors, fonts } from './styles/theme';
+import { colors, fonts } from '../styles/theme';
 
 export default function Welcome() {
   const router = useRouter();

@@ -3,7 +3,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 // Configure sua URL base (use seu IP local ou URL de produção)
 const api = axios.create({
-  baseURL: 'http://localhost:3000/api', // URL de produção
+  baseURL: 'http://10.0.30.83:3000/api', // URL de produção
   timeout: 10000,
 });
 

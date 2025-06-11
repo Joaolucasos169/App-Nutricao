@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Alert } from 'react-native';
 import { useRouter } from 'expo-router';
-import { colors, fonts } from './styles/theme';
+import { colors, fonts } from '../styles/theme';
 
 export default function CadastroUsuario() {
   const [nome, setNome] = useState('');
