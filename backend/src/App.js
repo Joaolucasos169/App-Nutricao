@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+<<<<<<< HEAD
 const cookieParser = require('cookie-parser');
 const mongoSanitize = require('express-mongo-sanitize');
 const helmet = require('helmet');
@@ -50,3 +51,18 @@ app.use('/api/users', users);
 app.use(errorHandler);
 
 module.exports = app;
+=======
+
+const authRoutes = require('./routes/authRoutes');
+const userRoutes = require('./routes/userRoutes');
+
+const app = express();
+
+app.use(cors());
+app.use(express.json());
+
+app.use('/api/auth', authRoutes);
+app.use('/api/users', userRoutes);
+
+module.exports = app;
+>>>>>>> 9c7ea033cb6d6cf6876dba6cf1cb4d03565fbbe2

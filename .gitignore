@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Backend
 backend/node_modules
 backend/.env
@@ -42,3 +43,20 @@ docker-compose.*.yml
 *.njsproj
 *.sln
 *.sw?
+=======
+# Ignorar arquivo .env
+.env
+
+# Ignorar dependências do Node.js
+node_modules/
+
+# Ignorar arquivos de log
+*.log
+
+# Ignorar arquivos temporários do VSCode
+.vscode/
+
+# Ignorar arquivos de sistema operacional
+.DS_Store      # macOS
+Thumbs.db      # Windows
+>>>>>>> 9c7ea033cb6d6cf6876dba6cf1cb4d03565fbbe2
