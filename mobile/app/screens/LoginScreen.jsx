@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Alert, KeyboardAvoidingView, Platform } from 'react-native';
-import { useRouter } from 'expo-router';
+import { useNavigation } from '@react-navigation/native';
 import { colors, fonts } from '../styles/theme';
 
 export default function Login() {
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
-  const router = useRouter();
+  const navigation = useNavigation();
 
   const handleLogin = async () => {
     if (!email || !senha) {
@@ -20,7 +20,7 @@ export default function Login() {
 
       // Simulação de login bem-sucedido
       Alert.alert('Sucesso', 'Login realizado com sucesso!');
-      router.push('/home');
+      navigation.navigate('Home');
     } catch (error) {
       console.error('Erro no login:', error);
       Alert.alert('Erro', 'Email ou senha incorretos.');

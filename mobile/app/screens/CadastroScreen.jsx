@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Alert } from 'react-native';
-import { useRouter } from 'expo-router';
+import { useNavigation } from '@react-navigation/native';
 import { colors, fonts } from '../styles/theme';
 
 export default function CadastroUsuario() {
@@ -8,7 +8,7 @@ export default function CadastroUsuario() {
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
   const [tipo, setTipo] = useState('paciente');
-  const router = useRouter();
+  const navigation = useNavigation();
 
   const handleCadastro = () => {
     if (!nome || !email || !senha) {
@@ -16,9 +16,8 @@ export default function CadastroUsuario() {
       return;
     }
 
-    // Aqui você faria a chamada para sua API de cadastro
     Alert.alert('Sucesso', `Usuário ${nome} cadastrado como ${tipo}.`);
-    router.push('/');
+    navigation.navigate('Login'); // Substitua pelo nome da tela de login
   };
 
   return (

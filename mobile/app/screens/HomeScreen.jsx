@@ -1,14 +1,13 @@
 import React, { useCallback, useState } from 'react';
 import { View, Text, FlatList, TouchableOpacity, StyleSheet } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import { useRouter } from 'expo-router';
+import { useNavigation, useFocusEffect } from '@react-navigation/native';
 import api from '../api/api';
-import { useFocusEffect } from '@react-navigation/native';
 import { colors, fonts } from '../styles/theme';
 
 export default function Home() {
   const [pacientes, setPacientes] = useState([]);
-  const router = useRouter();
+  const navigation = useNavigation();
 
   const carregarPacientes = async () => {
     try {
@@ -36,14 +35,14 @@ export default function Home() {
       <View style={styles.buttonRow}>
         <TouchableOpacity
           style={[styles.button, styles.detailsButton]}
-          onPress={() => router.push({ pathname: '/detalhes', params: { pacienteId: item.id } })}
+          onPress={() => navigation.navigate('Detalhes', { pacienteId: item.id })}
         >
           <Text style={styles.buttonText}>Detalhes</Text>
         </TouchableOpacity>
 
         <TouchableOpacity
           style={[styles.button, styles.planButton]}
-          onPress={() => router.push({ pathname: '/plano', params: { pacienteId: item.id } })}
+          onPress={() => navigation.navigate('Plano', { pacienteId: item.id })}
         >
           <Text style={styles.buttonText}>Plano</Text>
         </TouchableOpacity>
