@@ -1,34 +1,28 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Image } from 'react-native';
-import { useRouter } from 'expo-router';
+import { useNavigation } from '@react-navigation/native';
 import { colors, fonts } from '../styles/theme';
 
 export default function Welcome() {
-  const router = useRouter();
+  const navigation = useNavigation();
 
   return (
     <View style={styles.container}>
       <Image 
-        source={require('./assets/logo.png')} 
+        source={require('../assets/logo.png')} 
         style={styles.logo} 
-        resizeMode="contain"
+        resizeMode="container"
       />
       
       <Text style={styles.title}>Bem-vindo ao ForNutri</Text>
       <Text style={styles.subtitle}>Sua plataforma de acompanhamento nutricional</Text>
 
-      <TouchableOpacity 
-        style={styles.button} 
-        onPress={() => router.push('/login')}
-      >
-        <Text style={styles.buttonText}>Entrar</Text>
+      <TouchableOpacity onPress={() => navigation.navigate('Login')}>
+        <Text>Entrar</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity 
-        style={[styles.button, styles.secondaryButton]} 
-        onPress={() => router.push('/cadastro')}
-      >
-        <Text style={[styles.buttonText, styles.secondaryButtonText]}>Criar conta</Text>
+      <TouchableOpacity onPress={() => navigation.navigate('Cadastro')}>
+        <Text>Criar conta</Text>
       </TouchableOpacity>
     </View>
   );

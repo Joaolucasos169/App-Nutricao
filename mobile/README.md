@@ -48,3 +48,26 @@ Join our community of developers creating universal apps.
 
 - [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
 - [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+
+
+# App-Nutricao
+
+# BACKEND (executar dentro da pasta backend)
+npm install express mongoose bcryptjs jsonwebtoken cors cookie-parser express-mongo-sanitize helmet xss-clean express-rate-limit hpp dotenv
+npm install --save-dev nodemon
+
+# FRONTEND MOBILE (executar dentro da pasta mobile)
+# Dependências principais
+npm install axios @react-navigation/native @react-navigation/native-stack react-native-screens react-native-safe-area-context
+npm install @react-native-async-storage/async-storage react-hook-form
+
+# Dependências do Expo (se usou Expo)
+expo install react-native-gesture-handler react-native-reanimated react-native-screens react-native-safe-area-context @react-native-community/masked-view
+
+# Dependências opcionais úteis
+npm install react-native-vector-icons react-native-responsive-fontsize
+npm install formik yup  # Para validação de formulários
+npm install moment  # Para manipulação de datas
+
+# Para desenvolvimento (devDependencies)
+npm install --save-dev eslint prettier eslint-config-prettier eslint-plugin-prettier
