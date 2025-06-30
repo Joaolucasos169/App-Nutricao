@@ -20,7 +20,7 @@ class Server {
     this.port = process.env.PORT || 3000;
     this.configureMiddlewares();
     this.routes();
-    this.initDb();
+    // this.initDb();
   }
 
   configureMiddlewares() {
@@ -72,21 +72,26 @@ class Server {
     });
   }
 
-  async initDb() {
+  // async initDb() {
+  //   try {
+  //     await dbInit();
+  //     console.log('Banco de dados inicializado com sucesso');
+  //   } catch (error) {
+  //     console.error('Erro ao inicializar banco de dados:', error);
+  //     process.exit(1);
+  //   }
+  // }
+
+  async start() {
     try {
-      await dbInit();
-      console.log('Banco de dados inicializado com sucesso');
+      await this.initDb();
+      this.app.listen(this.port, () => {
+        console.log(`Servidor rodando na porta ${this.port}`);
+      });
     } catch (error) {
-      console.error('Erro ao inicializar banco de dados:', error);
+      console.error('Falha crítica ao iniciar o servidor:', error);
       process.exit(1);
     }
-  }
-
-  start() {
-    this.app.listen(this.port, () => {
-      console.log(`Servidor rodando na porta ${this.port}`);
-      console.log(`Documentação: http://10.0.30.179:${this.port}/api-docs`);
-    });
   }
 }
 
