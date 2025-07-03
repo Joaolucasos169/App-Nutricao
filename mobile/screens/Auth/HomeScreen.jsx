@@ -16,7 +16,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 const screenWidth = Dimensions.get('window').width;
-const baseURL = 'http://10.0.30.179:3000/upload/';
+const baseURL = 'http://10.0.30.106:3000/upload/';
 
 export default function HomeScreen() {
   const navigation = useNavigation();

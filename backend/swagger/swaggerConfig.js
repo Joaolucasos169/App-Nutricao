@@ -10,7 +10,7 @@ const options = {
     },
     servers: [
       {
-        url: 'http://10.0.30.179:3000',
+        url: 'http://10.0.30.106:3000',
       },
     ],
   },

@@ -23,7 +23,7 @@ router.post('/', async (req, res) => {
 
     await foto.mv(uploadPath);
 
-    const baseUrl = process.env.BASE_URL || `http://10.0.30.179:${process.env.PORT || 3000}`;
+    const baseUrl = process.env.BASE_URL || `http://10.0.30.106:${process.env.PORT || 3000}`;
     const url = `${baseUrl}/uploads/${nomeArquivo}`;
 
     res.status(200).json({ url });
